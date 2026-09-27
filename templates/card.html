@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <title>Pustaka programmer</title>
+</head>
+<body>
+  <header class="header">
+    <img src="../static/img/logo.svg" alt="logo" width="30" height="30">
+    <ul class="main-list">
+        <li class="list__item">
+          <a href="">
+            <img src="../static/img/login.svg" alt="login" width="20" height="20">
+          </a>
+    </ul>
+  </header>
+      <main class="main">
+    {% block content %}
+    <!-- Judul utama bawaan aplikasimu -->
+    <h1 class="main__title">{{card.title}}</h1>
+
+    <!-- Blok kotak asli bawaan aplikasimu -->
+    <div class="main__block">
+      <h2 class="main__subtitle">{{card.subtitle}}</h2>
+
+      <!-- Teks rata kiri tapi tetep pakai font besar bawaan CSS kamu -->
+      <div class="main__text" style="text-align: left; width: 100%;">
+      {{card.text}}
+      </div>
+
+      <!-- Tombol Kembali bawaan -->
+      <a class="main__link" href="/index">Kembali ke entri</a>
+
+      <!-- Tombol Edit yang menyesuaikan layout bawah -->
+      <a href="/edit/{{card.id}}" style="display: inline-block; padding: 10px 20px; background-color: #0ea5e9; color: #ffffff; border-radius: 8px; margin-top: 15px; font-weight: bold; text-decoration: none; text-align: center;">
+          Edit Entri Ini
+      </a>
+
+      <a href="/delete/{{card.id}}" style="display: inline-block; padding: 10px 20px; background-color: #ef4444; color: #ffffff; border-radius: 8px; margin-top: 10px; font-weight: bold; text-decoration: none; text-align: center;" onclick="return confirm('Yakin mau hapus entri tes ini?');">
+          Hapus Entri Ini
+      </a>
+    </div>
+    {% endblock %}
+  </main>
+
+  <footer>
+
+  </footer>
+</body>
+</html>
